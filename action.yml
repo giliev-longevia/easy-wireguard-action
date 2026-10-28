@@ -13,8 +13,8 @@ runs:
               sudo apt-get install --yes resolvconf wireguard
               sudo install -d -m 700 /etc/wireguard
               sudo install -m 600 /dev/null /etc/wireguard/wg0.conf
-              printf '%s\n' "$WG_CONFIG_FILE" | sudo tee /etc/wireguard/wg0.conf > /dev/null
               echo "setting config"
+              printf '%s\n' "$WG_CONFIG_FILE" | sudo tee /etc/wireguard/wg0.conf > /dev/null
               sudo wg-quick up wg0
           shell: bash
           env:
